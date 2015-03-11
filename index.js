@@ -3,9 +3,12 @@
 var opts = require("nomnom").parse();
 var words = require('sowpods');
 
+var patternRe = /^[A-Z]\d+[A-Z]$/;
+var wordRe = /^[a-zA-Z]{3+}$/;
+
 function search(term) {
   term = term.toUpperCase();
-  if (!(/^[A-Z]\d+[A-Z]$/.test(term))) {
+  if (!(.test(term))) {
     return;
   }
   var first = term[0];
@@ -17,11 +20,15 @@ function search(term) {
   });
 }
 
-if (opts[0]) {
-  process.stdout.write(search(opts[0]).join('\n'));
+var arg = opts[0];
+
+if (wordRe.test(arg)) {
+  process.stdout.write(arg[0] + arg.length - 2 + arg[arg.length - 1]);
+} else if (patternRe.test(arg)) {
+  process.stdout.write(search(arg));
 } else {
-  console.log('a9r - the abbreviator');
+  console.log('a9r - the abbreviator\n');
   console.log('finds words that match <letter><num><letter> patterns');
-  console.log('a9r matches "ABBREVIATOR"');
+  console.log('Example: a9r matches "ABBREVIATOR"');
   console.log('usage: a9r <pattern>');
 }
