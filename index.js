@@ -20,9 +20,9 @@ function search(term) {
 var arg = opts[0];
 
 if (wordRe.test(arg)) {
-  process.stdout.write(arg[0] + (arg.length - 2) + arg[arg.length - 1]);
+  console.log(arg[0] + (arg.length - 2) + arg[arg.length - 1]);
 } else if (patternRe.test(arg)) {
-  process.stdout.write(search(arg));
+  console.log(search(arg).join('\n'));
 } else {
   console.log('a9r - the abbreviator\n');
   console.log('finds words that match <letter><num><letter> patterns');
