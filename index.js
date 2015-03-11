@@ -7,9 +7,6 @@ var patternRe = /^[A-Za-z]\d+[A-Za-z]$/;
 var wordRe = /^[a-zA-Z]{3,}$/;
 
 function search(term) {
-  if (!(patternRe.test(term))) {
-    return;
-  }
   term = term.toUpperCase();
   var first = term[0];
   var last = term[term.length - 1];
