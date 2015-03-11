@@ -17,4 +17,11 @@ function search(term) {
   });
 }
 
-process.stdout.write(search(opts[0]).join('\n'));
+if (opts[0]) {
+  process.stdout.write(search(opts[0]).join('\n'));
+} else {
+  console.log('a9r - the abbreviator');
+  console.log('finds words that match <letter><num><letter> patterns');
+  console.log('a9r matches "ABBREVIATOR"');
+  console.log('usage: a9r <pattern>');
+}
