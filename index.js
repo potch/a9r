@@ -23,7 +23,7 @@ function search(term) {
 var arg = opts[0];
 
 if (wordRe.test(arg)) {
-  process.stdout.write(arg[0] + arg.length - 2 + arg[arg.length - 1]);
+  process.stdout.write(arg[0] + (arg.length - 2) + arg[arg.length - 1]);
 } else if (patternRe.test(arg)) {
   process.stdout.write(search(arg));
 } else {
