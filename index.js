@@ -3,14 +3,14 @@
 var opts = require("nomnom").parse();
 var words = require('sowpods');
 
-var patternRe = /^[A-Z]\d+[A-Z]$/;
+var patternRe = /^[A-Za-z]\d+[A-Za-z]$/;
 var wordRe = /^[a-zA-Z]{3,}$/;
 
 function search(term) {
-  term = term.toUpperCase();
   if (!(patternRe.test(term))) {
     return;
   }
+  term = term.toUpperCase();
   var first = term[0];
   var last = term[term.length - 1];
   var num = parseInt(term.substr(1, term.length - 2), 10);
