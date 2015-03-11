@@ -1,6 +1,6 @@
 {
   "name": "a9r",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "the abbreviator",
   "main": "index.js",
   "scripts": {
