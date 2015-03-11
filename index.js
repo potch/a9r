@@ -8,7 +8,7 @@ var wordRe = /^[a-zA-Z]{3+}$/;
 
 function search(term) {
   term = term.toUpperCase();
-  if (!(.test(term))) {
+  if (!(patternRe.test(term))) {
     return;
   }
   var first = term[0];
