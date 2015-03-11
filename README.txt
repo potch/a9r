@@ -1,4 +1,0 @@
-a9r - the abbreviator
-finds words that match <letter><num><letter> patterns
-a9r matches "ABBREVIATOR"
-usage: a9r <pattern>
