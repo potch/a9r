@@ -22,7 +22,10 @@ var arg = opts[0];
 if (wordRe.test(arg)) {
   console.log(arg[0] + (arg.length - 2) + arg[arg.length - 1]);
 } else if (patternRe.test(arg)) {
-  console.log(search(arg).join('\n'));
+  var words = search(arg).map(function (word) {
+    return word.toLowerCase();
+  });
+  console.log(words.join('\n'));
 } else {
   console.log('a9r - the abbreviator\n');
   console.log('finds words that match <letter><num><letter> patterns');
