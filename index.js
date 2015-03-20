@@ -19,9 +19,9 @@ function search(term) {
 
 var arg = opts[0];
 
-if (wordRe.test(arg)) {
+if (arg && wordRe.test(arg)) {
   console.log(arg[0] + (arg.length - 2) + arg[arg.length - 1]);
-} else if (patternRe.test(arg)) {
+} else if (arg && patternRe.test(arg)) {
   console.log(search(arg).join('\n'));
 } else {
   console.log('a9r - the abbreviator\n');
